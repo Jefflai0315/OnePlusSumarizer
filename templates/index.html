@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+  <title>OnePlus Sumarizer</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='doc.png') }}"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+  <img src="{{ url_for('static', filename='doc.png') }}" class="icon" />
+  <h3>Document Summarizer</h3>
+  <form action="/" method="post">
+    <input type="text" name="input" ,placeholder="Enter response" required />
+    <input type="submit" value="Generate" style="width: 25rem;"/>
+  </form>
+  {% if result %}
+  <section class="result ">
+    <h2><strong>Summary</strong></h2>
+    <div class="result ">{{ result }}</div>
+  </section>
+  {% endif %}
+</body>
